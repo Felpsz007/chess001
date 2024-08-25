@@ -1,0 +1,314 @@
+/* Reset básico */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #141414;
+    color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+/* Barra Lateral Oculta */
+.sidebar {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sidebar a {
+    padding: 20px;
+    text-decoration: none;
+    color: #f5f5f5;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+.sidebar a.active {
+    background-color: #e50914;
+}
+
+/* Navegação Superior */
+.top-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.top-navigation a {
+    text-decoration: none;
+    color: #e5e5e5;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 1em;
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.top-navigation a:hover {
+    color: #e50914;
+}
+
+/* Botão de Alternância da Barra Lateral */
+.sidebar-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #333;
+    color: #f5f5f5;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Conteúdo Principal */
+.content {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+/* Títulos */
+h1, h2 {
+    text-align: center;
+    font-family: 'Baskervville SC', serif;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+section {
+    margin: 40px 0;
+}
+
+/* Cursos */
+.courses-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.course {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+}
+
+.course img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.course h2 {
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Baskervville SC', serif;
+}
+
+.course p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Botão de Inscrição */
+.signup-button {
+    background-color: #e50914; /* Cor de fundo original */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    display: block;
+    max-width: 300px;
+}
+
+/* Efeitos ao passar o mouse */
+.signup-button:hover {
+    background-color: #ff1c1c; /* Cor de fundo mais escura ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento no tamanho do botão */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+}
+
+/* Efeitos ao clicar */
+.signup-button:active {
+    background-color: #b40d29; /* Cor de fundo ainda mais escura ao clicar */
+    transform: scale(0.98); /* Leve redução no tamanho do botão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra normal */
+}
+
+/* Estilo dos Botões "Saiba Mais" */
+.action-button {
+    background-color: #358dff; /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda */
+    padding: 12px 24px; /* Padding ajustado */
+    font-size: 1em; /* Tamanho da fonte */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de pointer */
+    transition: all 0.3s ease; /* Transição suave para hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    display: inline-block; /* Garante que o botão se ajuste ao tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 10px; /* Espaçamento superior para o botão */
+}
+
+/* Efeitos ao passar o mouse */
+.action-button:hover {
+    background-color: #358dff; /* Cor mais clara ao passar o mouse */
+    transform: translateY(-5px); /* Levanta o botão */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+}
+
+/* Efeitos ao clicar */
+.action-button:active {
+    background-color: #358dff; /* Cor de fundo quando pressionado */
+    transform: translateY(1px); /* Recolhe o botão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra normal */
+}
+
+/* Depoimentos */
+blockquote {
+    background-color: #222;
+    border-left: 5px solid #ff1b1b;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-style: italic;
+    border-radius: 5px;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .courses-container {
+        flex-direction: column;
+    }
+
+    .course {
+        max-width: 100%;
+    }
+
+    .top-navigation {
+        display: none;
+    }
+
+    .sidebar {
+        padding-top: 50px;
+    }
+
+    .sidebar-toggle {
+        top: 10px;
+        left: 10px;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-navigation a {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    .sidebar a {
+        padding: 15px;
+        font-size: 0.8em;
+    }
+
+    .signup-button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+/* CSS específico para a seção 2 */
+#section2 p {
+    padding-left: 50px;
+    padding-right: 20px;
+    line-height: 1.6; /* Espaço entre linhas */
+}
+/* CSS para o fundo preto que cobre toda a largura da tela na section2 */
+#section2 {
+    background-color: #000; /* Cor preta */
+    color: #fff; /* Cor do texto para garantir contraste e legibilidade */
+    width: 100vw; /* Largura da viewport */
+    margin-left: calc(-100vw / 2 + 50%); /* Compensa o deslocamento da esquerda */
+    margin-right: calc(-100vw / 2 + 50%); /* Compensa o deslocamento da direita */
+    padding: 10px 0; /* Adiciona 10 px de espaçamento acima e abaixo */
+    box-sizing: border-box; /* Inclui padding na largura total do elemento */
+}
+/* CSS para o fundo preto que cobre toda a largura da tela na section4 */
+#section4 {
+    background-color: #000; /* Cor preta */
+    color: #fff; /* Cor do texto para garantir contraste e legibilidade */
+    width: 100vw; /* Largura da viewport */
+    margin-left: calc(-100vw / 2 + 50%); /* Compensa o deslocamento da esquerda */
+    margin-right: calc(-100vw / 2 + 50%); /* Compensa o deslocamento da direita */
+    padding: 10px 0; /* Adiciona 10 px de espaçamento acima e abaixo */
+    box-sizing: border-box; /* Inclui padding na largura total do elemento */
+}
+
